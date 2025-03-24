@@ -19,5 +19,6 @@ jobs:
   
     - name: Compile, build and push
       run: |
-        #### AUFGABE COMPILE, DOCKER BUILD UND PUSH
-          # hier ist Platz für maven package und docker build
+        mvn package
+        docker build -t ghcr.io/cekoit00/petclinic:latest .
+        docker push ghcr.io -u cekoit00 -p $GITHUB_ACCESSTOKEN
