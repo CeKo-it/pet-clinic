@@ -21,4 +21,5 @@ jobs:
       run: |
         mvn package
         docker build -t ghcr.io/cekoit00/petclinic:latest .
-        docker push ghcr.io -u cekoit00 -p $GITHUB_ACCESSTOKEN
+        docker login --username cekoit00 --password $GITHUB_ACCESSTOKEN ghcr.io
+        docker push ghcr.io/cekoit00/petclinic:latest
